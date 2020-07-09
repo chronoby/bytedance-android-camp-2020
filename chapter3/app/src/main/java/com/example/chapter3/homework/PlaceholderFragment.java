@@ -8,11 +8,14 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 public class PlaceholderFragment extends Fragment {
 
     private View anim;
-    private View text;
+    private ListView text;
+    private String data[] = {"aa","bb","cc","dd","aa","bb","cc","dd","aa","bb","cc","dd","aa","bb","cc","dd"};//data
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -23,8 +26,14 @@ public class PlaceholderFragment extends Fragment {
         anim = view.findViewById(R.id.animation_view);
         text = view.findViewById(R.id.textt);
         text.setAlpha(0);
+
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, data);//新建并配置ArrayAapeter
+        text.setAdapter(adapter);
+
         return view;
     }
+
 
 
 
