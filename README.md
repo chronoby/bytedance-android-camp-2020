@@ -1,15 +1,18 @@
 # bytedance-android-camp-2020
-### chapter 1
+### Chapter 1
 - Android introduction
 
-### chapter 2
+### Chapter 2
 - Android UI basic
 
-### chapter 3
+### Chapter 3
 - Android UI 进阶
 
-### chapter 4
+### Chapter 4
 - Android 复杂应用组件
 
-### chapter 5
+### Chapter 5
 - Android 网络
+
+### Chapter 6
+- Android 存储
