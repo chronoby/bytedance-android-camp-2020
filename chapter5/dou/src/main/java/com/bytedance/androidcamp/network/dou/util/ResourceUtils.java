@@ -11,11 +11,6 @@ import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 import android.support.v4.content.CursorLoader;
 
-/**
- * @author Xavier.S
- * @date 2019.01.20 15:00
- */
-
 public class ResourceUtils {
 
     /**

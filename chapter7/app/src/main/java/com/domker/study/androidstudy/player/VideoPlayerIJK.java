@@ -24,9 +24,7 @@ public class VideoPlayerIJK extends FrameLayout {
     public IMediaPlayer mMediaPlayer = null;
 
     private boolean hasCreateSurfaceView = false;
-    /**
-     * 视频文件地址
-     */
+
     private String mPath = "";
     private int resId = 0;
 
@@ -55,12 +53,6 @@ public class VideoPlayerIJK extends FrameLayout {
         setFocusable(true);
     }
 
-    /**
-     * 设置视频地址。
-     * 根据是否第一次播放视频，做不同的操作。
-     *
-     * @param path the path of the video.
-     */
     public void setVideoPath(String path) {
         mPath = path;
         load();
@@ -73,9 +65,6 @@ public class VideoPlayerIJK extends FrameLayout {
         createSurfaceView();
     }
 
-    /**
-     * 新建一个surfaceview
-     */
     private void createSurfaceView() {
         if (hasCreateSurfaceView) {
             return;
@@ -179,10 +168,6 @@ public class VideoPlayerIJK extends FrameLayout {
             mMediaPlayer.setOnCompletionListener(listener);
         }
     }
-
-    /**
-     * -------======--------- 下面封装了一下控制视频的方法
-     */
 
     public void start() {
         if (mMediaPlayer != null) {

@@ -272,7 +272,6 @@ public class IJKPlayerActivity extends Activity implements View.OnClickListener 
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.ijkPlayer:
-                // TODO : 设定volume seekbar的隐藏
                 if (menu_visible == false) {
                     rl_bottom.setVisibility(View.VISIBLE);
                     Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.show_bottom);
@@ -298,7 +297,6 @@ public class IJKPlayerActivity extends Activity implements View.OnClickListener 
                 } else {
                     ijkPlayer.start();
                     btnPlay.setText(getResources().getString(R.string.pause));
-                    // TODO: 修复进度条不动的问题
                     handler.sendEmptyMessageDelayed(MSG_REFRESH, 500);
                 }
                 break;

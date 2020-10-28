@@ -67,14 +67,12 @@ public class ClockView extends View {
         unitPaint.setStrokeCap(Paint.Cap.ROUND);
         unitPaint.setStyle(Paint.Style.STROKE);
 
-        // TODO 设置绘制时、分、秒针的画笔: needlePaint
         needlePaint.setAntiAlias(true);
         needlePaint.setColor(Color.WHITE);
         needlePaint.setStrokeWidth(UNIT_LINE_WIDTH);
         needlePaint.setStrokeCap(Paint.Cap.ROUND);
         needlePaint.setStyle(Paint.Style.STROKE);
 
-        // TODO 设置绘制时间数字的画笔: numberPaint
         numberPaint.setAntiAlias(true);
         numberPaint.setColor(Color.WHITE);
         numberPaint.setStrokeCap(Paint.Cap.ROUND);
@@ -138,18 +136,7 @@ public class ClockView extends View {
         int hour = time.getHours();
         int minute = time.getMinutes();
         int second = time.getSeconds();
-        // TODO 根据当前时间，绘制时针、分针、秒针
-        /**
-         * 思路：
-         * 1、以时针为例，计算从0点（12点）到当前时间，时针需要转动的角度
-         * 2、根据转动角度、时针长度和圆心坐标计算出时针终点坐标（起始点为圆心）
-         * 3、从圆心到终点画一条线，此为时针
-         * 注1：计算时针转动角度时要把时和分都得考虑进去
-         * 注2：计算坐标时需要用到正余弦计算，请用Math.sin()和Math.cos()方法
-         * 注3：Math.sin()和Math.cos()方法计算时使用不是角度而是弧度，所以需要先把角度转换成弧度，
-         *     可以使用Math.toRadians()方法转换，例如Math.toRadians(180) = 3.1415926...(PI)
-         * 注4：Android视图坐标系的0度方向是从圆心指向表盘3点方向，指向表盘的0点时是-90度或270度方向，要注意角度的转换
-         */
+
         int secDegree = (second - 15) * 6;
         float startX2 = (float) (centerX);
         float startY2 = (float) (centerY);
@@ -187,7 +174,6 @@ public class ClockView extends View {
     }
 
     private void drawTimeNumbers(Canvas canvas) {
-        // TODO 绘制表盘时间数字（可选）
         Paint.FontMetrics frontMetrics = numberPaint.getFontMetrics();
         float top = frontMetrics.top;
         float bottom = frontMetrics.bottom;

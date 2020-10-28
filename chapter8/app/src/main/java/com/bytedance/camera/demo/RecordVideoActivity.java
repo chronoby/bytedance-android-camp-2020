@@ -31,10 +31,8 @@ public class RecordVideoActivity extends AppCompatActivity {
         findViewById(R.id.btn_picture).setOnClickListener(v -> {
 
             if (Utils.isPermissionsReady(this, permissions)) {
-                //todo 打开摄像机
                 openVideoRecordApp();
             } else {
-                //todo 权限检查
                 Utils.reuqestPermissions(this, permissions, REQUEST_EXTERNAL_CAMERA);
             }
         });
@@ -45,7 +43,6 @@ public class RecordVideoActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
         super.onActivityResult(requestCode, resultCode, intent);
         if (requestCode == REQUEST_VIDEO_CAPTURE && resultCode == RESULT_OK) {
-            //todo 播放刚才录制的视频
             Uri videoUri = intent.getData();
             videoView.setVideoURI(videoUri);
             videoView.start();
@@ -57,9 +54,7 @@ public class RecordVideoActivity extends AppCompatActivity {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         switch (requestCode) {
             case REQUEST_EXTERNAL_CAMERA: {
-                //todo 判断权限是否已经授予
                 if (Utils.isPermissionsReady(this, permissions)) {
-                    //todo 打开摄像机
                     openVideoRecordApp();
                 }
                 break;

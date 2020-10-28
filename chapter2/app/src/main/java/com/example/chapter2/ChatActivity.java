@@ -22,6 +22,5 @@ public class ChatActivity extends AppCompatActivity{
         String text;
         text = "Item" + String.valueOf(type);
         tv.setText(text);
-
     };
 }

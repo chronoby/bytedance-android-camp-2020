@@ -12,7 +12,6 @@ public class LinearItemDecoration extends RecyclerView.ItemDecoration {
     private Paint mPaint;
 
     public LinearItemDecoration(int color) {
-        // 直接绘制颜色  只是用来测试
         mPaint = new Paint();
         mPaint.setColor(color);
         mPaint.setAntiAlias(true);

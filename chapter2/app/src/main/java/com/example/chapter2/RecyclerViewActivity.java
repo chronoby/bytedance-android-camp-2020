@@ -48,11 +48,7 @@ public class RecyclerViewActivity extends AppCompatActivity implements MyAdapter
         mAdapter.setOnItemClickListener(this);
         recyclerView.setAdapter(mAdapter);
         LinearItemDecoration itemDecoration = new LinearItemDecoration(Color.BLUE);
-//        recyclerView.addItemDecoration(itemDecoration);
         recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
-//        DefaultItemAnimator animator = new DefaultItemAnimator();
-//        animator.setAddDuration(3000);
-//        recyclerView.setItemAnimator(animator);
     }
 
     @Override

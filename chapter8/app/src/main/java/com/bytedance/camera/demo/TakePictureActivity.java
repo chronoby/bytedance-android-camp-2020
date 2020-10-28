@@ -66,7 +66,6 @@ public class TakePictureActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
-        //todo 处理返回数据
             // 只能返回一个bitmap的小图片
 //            Bundle extras = data.getExtras();
 //            Bitmap imageBitmap = (Bitmap) extras.get("data");
@@ -77,8 +76,7 @@ public class TakePictureActivity extends AppCompatActivity {
     }
 
     private void setPic() {
-        //todo 根据imageView裁剪
-        //todo 根据缩放比例读取文件，生成Bitmap
+
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inJustDecodeBounds = true;
         BitmapFactory.decodeFile(imageFile.getAbsolutePath(),options);
@@ -89,9 +87,7 @@ public class TakePictureActivity extends AppCompatActivity {
         options.inSampleSize  = scaleFactor;
         options.inPurgeable = true;
         Bitmap bitmap = BitmapFactory.decodeFile(imageFile.getAbsolutePath(),options);
-        //todo 如果存在预览方向改变，进行图片旋转
         bitmap = Utils.rotateImage(bitmap, imageFile.getAbsolutePath());
-        //todo 显示图片
         imageView.setImageBitmap(bitmap);
     }
 
@@ -99,7 +95,6 @@ public class TakePictureActivity extends AppCompatActivity {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         switch (requestCode) {
             case REQUEST_EXTERNAL_STORAGE: {
-                //todo 判断权限是否已经授予
                 if (Utils.isPermissionsReady(TakePictureActivity.this,permissions)){
                     takePicture();
                 }

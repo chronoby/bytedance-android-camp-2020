@@ -70,14 +70,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String s = mBtn.getText().toString();
                 if (getString(R.string.select_an_image).equals(s)) {
-                    //@TODO 1填充选择图片的功能
                     chooseImage();
                 } else if (getString(R.string.select_a_video).equals(s)) {
-                    //@TODO 2填充选择视频的功能
                     chooseVideo();
                 } else if (getString(R.string.post_it).equals(s)) {
                     if (mSelectedVideo != null && mSelectedImage != null) {
-                        //@TODO 3调用上传功能
                         postVideo();
                     } else {
                         throw new IllegalArgumentException("error data uri, mSelectedVideo = "
@@ -189,7 +186,6 @@ public class MainActivity extends AppCompatActivity {
         mBtn.setEnabled(false);
         MultipartBody.Part coverImagePart = getMultipartFromUri("cover_image", mSelectedImage);
         MultipartBody.Part videoPart = getMultipartFromUri("video", mSelectedVideo);
-        //@TODO 4下面的id和名字替换成自己的
         miniDouyinService.postVideo(id, name, coverImagePart, videoPart).enqueue(
                 new Callback<PostVideoResponse>() {
                     @Override
@@ -219,7 +215,6 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<GetVideosResponse> call, Response<GetVideosResponse> response) {
                 if (response.body() != null && response.body().videos != null) {
                     mVideos = response.body().videos;
-                    //@TODO  5服务端没有做去重，拿到列表后，可以在端侧根据自己的id，做列表筛选。
                     Iterator<Video> it = mVideos.iterator();
                     while(it.hasNext()){
                         Video v = it.next();

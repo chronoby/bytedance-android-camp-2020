@@ -129,8 +129,6 @@ public class Ch3Ex2Activity extends AppCompatActivity {
             animatorSet.cancel();
         }
 
-        // 在这里实现了一个 ObjectAnimator，对 target 控件的背景色进行修改
-        // 可以思考下，这里为什么要使用 ofArgb，而不是 ofInt 呢？
         ObjectAnimator animator1 = ObjectAnimator.ofArgb(target,
                 "backgroundColor",
                 getBackgroundColor(startColorPicker),
@@ -138,8 +136,6 @@ public class Ch3Ex2Activity extends AppCompatActivity {
         animator1.setDuration(Integer.parseInt(durationSelector.getText().toString()));
         animator1.setRepeatCount(ObjectAnimator.INFINITE);
         animator1.setRepeatMode(ObjectAnimator.REVERSE);
-
-        // TODO ex2-1：在这里实现另一个 ObjectAnimator，对 target 控件的大小进行缩放，从 1 到 2 循环
 
         View imageView = findViewById(R.id.target);
         ObjectAnimator scaleXAnimator = ObjectAnimator.ofFloat(imageView,
@@ -156,13 +152,11 @@ public class Ch3Ex2Activity extends AppCompatActivity {
         scaleYAnimator.setDuration(Integer.parseInt(durationSelector.getText().toString()));
         scaleYAnimator.setRepeatMode(ValueAnimator.REVERSE);
 
-        // TODO ex2-2：在这里实现另一个 ObjectAnimator，对 target 控件的透明度进行修改，从 1 到 0.5f 循环
         ObjectAnimator alphaAnimator = ObjectAnimator.ofFloat(imageView, "alpha", 1.0f, 0.0f);
         alphaAnimator.setDuration(Integer.parseInt(durationSelector.getText().toString()));
         alphaAnimator.setRepeatCount(ObjectAnimator.INFINITE);
         alphaAnimator.setRepeatMode(ObjectAnimator.REVERSE);
 
-        // TODO ex2-3: 将上面创建的其他 ObjectAnimator 都添加到 AnimatorSet 中
         animatorSet = new AnimatorSet();
         animatorSet.playTogether(animator1, scaleXAnimator, scaleYAnimator, alphaAnimator);
         animatorSet.start();
