@@ -8,16 +8,16 @@
 2. 在 activity_main 中添加 LottieAnimationView
 3. 在 SeekBar 的回调中修改 LottieAnimationView 的进度
 
-<img src="https://github.com/chronoby/bytedance-android-camp-2020/blob/master/chapter3/Image/ani1.gif" width="600"  alt="Animation 1"/><br/>
+<img src="https://github.com/chronoby/bytedance-android-camp-2020/blob/master/chapter3/Image/ani1.gif" width="400"  alt="Animation 1"/><br/>
 
 ## Exercise 2
 
 使用属性动画，AnimatorSet 和 scale/fade 等基本动画样式
 
-<img src="https://github.com/chronoby/bytedance-android-camp-2020/blob/master/chapter3/Image/ani2.gif" width="600"  alt="Animation 2"/><br/>
+<img src="https://github.com/chronoby/bytedance-android-camp-2020/blob/master/chapter3/Image/ani2.gif" width="400"  alt="Animation 2"/><br/>
 
 ## Exercise 3
 
 TabLayout + ViewPager
 
-<img src="https://github.com/chronoby/bytedance-android-camp-2020/blob/master/chapter3/Image/ani3.gif" width="600"  alt="Animation 3"/><br/>
+<img src="https://github.com/chronoby/bytedance-android-camp-2020/blob/master/chapter3/Image/ani3.gif" width="400"  alt="Animation 3"/><br/>
